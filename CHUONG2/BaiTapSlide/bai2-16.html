@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <img src="img/bai2-4.jpg" alt="" width="200" height="100" />
+      <form onsubmit="return validateForm()">
+        <label for="mail">Email Address</label>
+        <input type="email" name="mail" required /> <br />
+        <label for="date">Date of Booking</label>
+        <input type="date" name="date" id="date" /> <br />
+        <label for="people">Number of people</label>
+        <input type="number" name="people" id="peolple" min="1" max="8" />
+        <br />
+        <input type="checkbox" name="agree" id="agree" required />
+        <label for="agree">I agree to the cancellation policy</label> <br />
+        <input type="submit" value="Book now" />
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        // Kiểm tra nếu checkbox đã được chọn
+        if (!document.getElementById("agree").checked) {
+          alert("Please agree to the cancellation policy.");
+          return false;
+        }
+        return true;
+      }
+    </script>
+  </body>
+</html>
